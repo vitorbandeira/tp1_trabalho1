@@ -10,9 +10,10 @@ private:
 public:
 	cNome();
 	cNome(char str[20]){ strcpy(string, str); }
+	~cNome();
 	inline char * getNome() { return string; }
 	inline void setNome(char str [20]) { strcpy(string, str); }
-	~cNome();
+	bool Validade();
 
 };
 
@@ -49,7 +50,7 @@ private:
 public:
 	cCorreioEletronico();
 	~cCorreioEletronico();
-
+	bool Validade();
 };
 
 class cSenha
@@ -59,7 +60,7 @@ private:
 public:
 	cSenha();
 	~cSenha();
-
+	bool Validade();
 };
 
 class cTexto
@@ -79,7 +80,7 @@ private:
 public:
 	cIdioma();
 	~cIdioma();
-
+	bool Validade();
 };
 
 class cClasseDeTermo
