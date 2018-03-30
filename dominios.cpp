@@ -3,13 +3,13 @@
 using namespace std;
 
 bool Minuscula(char ch){
-	if(65 <= ch && ch <= 90)
+	if('a' <= ch && ch <= 'z')
 		return true;
 	return false;
 }
 
 bool Maiuscula(char ch){
-	if(97 <= ch && ch <= 122)
+	if('A' <= ch && ch <= 'Z')
 		return true;
 	return false;
 }
@@ -21,20 +21,21 @@ bool Letra(char ch){
 }
 
 bool Numero(char ch){
-	if(48 <= ch && ch <= 57)
+	if('1' <= ch && ch <= '9')
 		return true;
-	return 0;
+	return false;
 }
 
 //FUNÇÕES DA CLASSE NOME
-bool cNome::Validade(){
-	bool erro = false;
-	if(!Maiuscula(string[0]))// não é letra maiuscula
-		erro = true;
-	for (unsigned int i = 1; i < strlen(string); ++i)
-		if(!Letra(string[i]))//Não é letra
-			erro = true;
-	return erro;
+void cNome::Validade(char str[20]) throw (invalid_argument){
+	if(!Maiuscula(str[0]))
+		throw invalid_argument ("Não comeca com letra maiuscula");
+	for (unsigned int i = 1; i < strlen(string); ++i){
+		if(str[i] == '\0')
+			break;
+		if(!Letra(str[i]))
+			throw invalid_argument ("Caracter não alfabetico");
+	}
 }
 
 //FUNÇÕES DA CLASSE TELEFONE

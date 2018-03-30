@@ -1,9 +1,24 @@
 # depslib dependency file v1.0
-1522174481 source:/home/pedro/Documentos/TP1/trabalho_1/trabalho1/main.cpp
+1522381113 source:/home/pedro/Documentos/TP1/trabalho_1/trabalho1/main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+
+1522381068 /home/pedro/Documentos/TP1/trabalho_1/trabalho1/dominios.h
+	<iostream>
+	<cstring>
+	<stdexcept>
+
+1522378442 source:/home/pedro/Documentos/TP1/trabalho_1/trabalho1/dominios.cpp
 	<iostream>
 	"dominios.h"
 
-1522237720 /home/pedro/Documentos/TP1/trabalho_1/trabalho1/dominios.h
+1522207124 source:/home/pedro/Documentos/TP1/trabalho_1/trabalho1/entidades.cpp
+	<iostream>
+	"entidades.h"
+
+1522380202 /home/pedro/Documentos/TP1/trabalho_1/trabalho1/entidades.h
 	<iostream>
 	<cstring>
+	"dominios.h"
 

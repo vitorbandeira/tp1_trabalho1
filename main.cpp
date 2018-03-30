@@ -5,6 +5,13 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    char name[20] = {"pedro"};
+	cNome n(name);
+	// n.setNome(name);
+	cout << n.getNome() << endl;
+	strcpy(name, "Coisinha");
+	n.setNome(name);
+	cout << n.getNome() << endl;
+
     return 0;
 }

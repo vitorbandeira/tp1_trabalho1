@@ -1,3 +1,6 @@
+#ifndef ENTIDADES_H_DEFINED
+#define ENTIDADES_H_DEFINED
+
 #include <iostream>
 #include <cstring>
 #include "dominios.h"
@@ -9,12 +12,12 @@ class cLeitor
 private:
 	cNome nome;
 	cNome sobrenome;
-	cEnderecoEletronico email;
+	cCorreioEletronico email;
 	cSenha senha;
 public:
 	cLeitor();
 	~cLeitor();
-	
+
 };
 
 class cVocab
@@ -24,7 +27,7 @@ private:
 public:
 	cVocab();
 	~cVocab();
-	
+
 };
 
 class cTermo
@@ -34,16 +37,20 @@ private:
 public:
 	cTermo();
 	~cTermo();
-	
+
 };
 
 class cDefinicao
 {
 private:
-	
+
 
 public:
 	cDefinicao();
 	~cDefinicao();
-	
+
 };
+
+
+
+#endif //ENTIDADES_H_DEFINED
