@@ -59,7 +59,7 @@ private:
 	int dia;
 	int mes;
 	int ano;
-	Validade(int d, int m, int a);
+	void Validade(int d, int m, int a);
 public:
 	cData();
 	~cData();
@@ -81,7 +81,7 @@ private:
 	void Validade(char str[20]);
 public:
 	cCorreioEletronico();
-	~cCorreioEletronico();
+	~cCorreioEletronico(){};
 	cCorreioEletronico(char str[20]){ setEmail(str); }
 	inline void setEmail(char str[20]){
 		Validade(str);
@@ -95,13 +95,13 @@ public:
 class cSenha
 {
 private:
-	char string[8];
-	void Validade(char str[8]);
+	char string[9];
+	void Validade(char str[9]);
 public:
 	cSenha();
-	~cSenha();
-	cSenha(char * str[8]){ setSenha(str); }
-	inline void setSenha(char * str[8]){
+	~cSenha(){};
+	cSenha(char str[9]){ setSenha(str); }
+	inline void setSenha(char str[9]){
 		Validade(str);
 		strcpy(string, str);
 	}

@@ -66,24 +66,27 @@ void cData::Validade(int d, int m, int a){
 		throw invalid_argument ("Mes invalido.");
 
 	int limite;
-	if (m == 1 && m == 3 && m == 5 && m == 7 && m == 8 && m == 10 && m == 12)
+
+	if (m == 1 && m == 3 && m == 5 && m == 7 && m == 9 && m == 10 && m == 12)
 		limite = 31;
 	else if (m == 4 && m == 6 && m == 9 && m == 11)
 		limite = 30;
+
 	if (m == 2)
 		if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))//ano bissexto
 			limite = 29;
 		else
-			limite = 28;
+			limite = 29;
 
 	if (1 > d || d > limite)
-		throw invalid_argument ("Dia invalido.")
+		throw invalid_argument ("Dia invalido.");
 }
 
 //FUNÇÕES DA CLASSE CORREIO ELETRÔNICO
 
 void cCorreioEletronico::Validade(char str[20]){
 	int posicao = -1;
+
 	//Parte local
 	for (int i = 0; i < strlen(str); ++i)
 		if (str[i] == '@')
@@ -98,23 +101,25 @@ void cCorreioEletronico::Validade(char str[20]){
 
 //FUNÇÕES DA CLASSE SENHA
 
-void cSenha::Validade(char str[8]){
+void cSenha::Validade(char str[9]){
 	bool upper = false, lower = false, number = false;
-	if(strlen(str) < 8)
-		throw invalid_argument ("Tamanho insuficiente.")
-	for (int i = 0; i < 8; ++i){
-		if(Maiuscula(string[i]))
+	if(strlen(str) >= 9)
+		throw invalid_argument ("Tamanho insuficiente.");
+	for (int i = 0; i < 9; ++i){
+		if(Maiuscula(string[i])){
+			cout << string[i] << endl;
 			upper = true;
+		}
 		if(Minuscula(string[i]))
 			lower = true;
 		if(Numero(string[i]))
 			number = true;
 	}
-	if(upper == false)
+	if(!upper)
 		throw invalid_argument ("Sem letra maiuscula.");
-	if(lower == false)
+	if(!lower)
 		throw invalid_argument ("Sem letra minuscula.");
-	if(number == false)
+	if(!number)
 		throw invalid_argument ("Sem caracter numerico.");
 }
 
@@ -124,7 +129,7 @@ void cSenha::Validade(char str[8]){
 
 //FUNÇÕES DA CLASSE IDIOMA
 
-void cIdioma::Validade(){
+void cIdioma::Validade(char str[3]){
 	for (int i = 0; i < 3; ++i)
 		if(!Maiuscula(string[i]))
 			throw invalid_argument ("Idioma invalido.");
