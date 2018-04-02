@@ -22,3 +22,26 @@
 	<cstring>
 	"dominios.h"
 
+1522696331 source:c:\users\pedro\documents\github\tp1_trabalho1\dominios.cpp
+	<iostream>
+	"dominios.h"
+
+1522693236 c:\users\pedro\documents\github\tp1_trabalho1\dominios.h
+	<iostream>
+	<cstring>
+	<stdexcept>
+
+1522465645 source:c:\users\pedro\documents\github\tp1_trabalho1\entidades.cpp
+	<iostream>
+	"entidades.h"
+
+1522465645 c:\users\pedro\documents\github\tp1_trabalho1\entidades.h
+	<iostream>
+	<cstring>
+	"dominios.h"
+
+1522696365 source:c:\users\pedro\documents\github\tp1_trabalho1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+

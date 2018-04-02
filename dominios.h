@@ -10,16 +10,16 @@ using namespace std;
 class cNome//e sobrenome
 {
 private:
-	char string[20];
-	void Validade(char str[20]) throw (invalid_argument);
+	char string[21];
+	void Validade(char str[21]) throw (invalid_argument);
 public:
 	cNome();
 	~cNome(){};
-	cNome(char str[20]){
+	cNome(char str[21]){
 		setNome(str);
 	}
 	inline char * getNome() { return string; }
-	inline void setNome (char str [20]) throw(invalid_argument){
+	inline void setNome (char str [21]) throw(invalid_argument){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -40,13 +40,13 @@ public:
 class cEndereco
 {
 private:
-	char string[20];
-	void Validade(char str[20]);
+	char string[21];
+	void Validade(char str[21]);
 public:
 	cEndereco();
 	~cEndereco(){};
-	cEndereco(char str[20]){ setEndereco(str); }
-	inline void setEndereco(char str[20]){
+	cEndereco(char str[21]){ setEndereco(str); }
+	inline void setEndereco(char str[21]){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -77,13 +77,13 @@ public:
 class cCorreioEletronico
 {
 private:
-	char string[20];
-	void Validade(char str[20]);
+	char string[21];
+	void Validade(char str[21]);
 public:
 	cCorreioEletronico();
 	~cCorreioEletronico(){};
-	cCorreioEletronico(char str[20]){ setEmail(str); }
-	inline void setEmail(char str[20]){
+	cCorreioEletronico(char str[21]){ setEmail(str); }
+	inline void setEmail(char str[21]){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -111,23 +111,23 @@ public:
 class cTexto
 {
 private:
-	char string[30];
+	char string[31];
 public:
 	cTexto();
-	~cTexto();
+	~cTexto(){};
 
 };
 
 class cIdioma
 {
 private:
-	char string[3];
-	void Validade(char str[3]);
+	char string[4];
+	void Validade(char str[4]);
 public:
 	cIdioma();
-	~cIdioma();
-	cIdioma(char str[3]){ setIdioma(str); }
-	inline void setIdioma(char str[3]){
+	~cIdioma(){};
+	cIdioma(char str[4]){ setIdioma(str); }
+	inline void setIdioma(char str[4]){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -140,7 +140,7 @@ private:
 
 public:
 	cClasseDeTermo();
-	~cClasseDeTermo();
+	~cClasseDeTermo(){};
 
 };
 

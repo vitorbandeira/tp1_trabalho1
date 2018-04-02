@@ -21,7 +21,7 @@ bool Letra(char ch){
 }
 
 bool Numero(char ch){
-	if('1' <= ch && ch <= '9')
+	if('0' <= ch && ch <= '9')
 		return true;
 	return false;
 }
@@ -86,7 +86,6 @@ void cData::Validade(int d, int m, int a){
 
 void cCorreioEletronico::Validade(char str[20]){
 	int posicao = -1;
-
 	//Parte local
 	for (int i = 0; i < strlen(str); ++i)
 		if (str[i] == '@')
@@ -97,6 +96,22 @@ void cCorreioEletronico::Validade(char str[20]){
 		throw invalid_argument ("Email iniciado por '.'.");
 	if (str[posicao-1] == '.')
 		throw invalid_argument ("Email com '.' antes de @.");
+	//Domínio
+	bool numerico = true;
+	for (int i = posicao+1; i < strlen(str); ++i)
+		if(!Numero(str[i]))
+			numerico = false;
+	if(numerico)
+		throw invalid_argument ("Email com parte compleramente numerica");
+	if(str[posicao+1] == '.')
+		throw invalid_argument ("Email com '.' depois de @.");
+	if(str[strlen(str)-1] == '.')
+		throw invalid_argument ("Email terminado por '.'.");
+	if(str[posicao+1] == '-')
+		throw invalid_argument ("Email com '-' depois de @.");
+	if(str[strlen(str)-1] == '-')
+		throw invalid_argument ("Email terminado por '-'.");
+
 }
 
 //FUNÇÕES DA CLASSE SENHA
@@ -105,15 +120,13 @@ void cSenha::Validade(char str[9]){
 	bool upper = false, lower = false, number = false;
 	if(strlen(str) >= 9)
 		throw invalid_argument ("Tamanho insuficiente.");
-	for (int i = 0; i < 9; ++i){
-		if(Maiuscula(string[i])){
-			cout << string[i] << endl;
-			upper = true;
-		}
-		if(Minuscula(string[i]))
-			lower = true;
-		if(Numero(string[i]))
+	for (int i = 0; i < 8; ++i){
+		if(Numero(str[i]))
 			number = true;
+		if(Maiuscula(str[i]))
+			upper = true;
+		if(Minuscula(str[i]))
+			lower = true;
 	}
 	if(!upper)
 		throw invalid_argument ("Sem letra maiuscula.");
@@ -131,7 +144,7 @@ void cSenha::Validade(char str[9]){
 
 void cIdioma::Validade(char str[3]){
 	for (int i = 0; i < 3; ++i)
-		if(!Maiuscula(string[i]))
+		if(!Maiuscula(str[i]))
 			throw invalid_argument ("Idioma invalido.");
 }
 

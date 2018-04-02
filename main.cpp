@@ -46,6 +46,13 @@ int main()
 
 	//Teste da classe idioma
 
+	char idioma[4] = {"BRA"};
+	cIdioma idi(idioma);
+	cout << idi.getIdioma() << endl;
+	strcpy(idioma, "ENG");
+	idi.setIdioma(idioma);
+	cout << idi.getIdioma() << endl;
+
 	//Teste da classe classe de termo
 
 
