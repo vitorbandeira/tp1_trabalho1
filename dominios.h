@@ -29,7 +29,8 @@ public:
 class cTelefone
 {
 private:
-
+	char area[2];
+	char numero[9];
 public:
 	cTelefone();
 	~cTelefone();
@@ -40,17 +41,36 @@ class cEndereco
 {
 private:
 	char string[20];
+	void Validade(char str[20]);
 public:
 	cEndereco();
-	~cEndereco();
-
+	~cEndereco(){};
+	cEndereco(char str[20]){ setEndereco(str); }
+	inline void setEndereco(char str[20]){
+		Validade(str);
+		strcpy(string, str);
+	}
+	inline char * getEndereco(){ return string; }
 };
 
 class cData
 {
+private:
+	int dia;
+	int mes;
+	int ano;
+	Validade(int d, int m, int a);
 public:
 	cData();
 	~cData();
+	cData(int d, int m, int a){ setData(d, m, a); }
+	void inline setData(int d, int m, int a){
+		Validade(d, m, a);
+		dia = d; mes = m; ano = a;
+	}
+	inline int getDia() { return dia; }
+	inline int getMes() { return mes; }
+	inline int getAno() { return ano; }
 
 };
 
@@ -58,20 +78,34 @@ class cCorreioEletronico
 {
 private:
 	char string[20];
+	void Validade(char str[20]);
 public:
 	cCorreioEletronico();
 	~cCorreioEletronico();
-	bool Validade();
+	cCorreioEletronico(char str[20]){ setEmail(str); }
+	inline void setEmail(char str[20]){
+		Validade(str);
+		strcpy(string, str);
+	}
+	inline char * getEmail(){
+		return string;
+	}
 };
 
 class cSenha
 {
 private:
 	char string[8];
+	void Validade(char str[8]);
 public:
 	cSenha();
 	~cSenha();
-	bool Validade();
+	cSenha(char * str[8]){ setSenha(str); }
+	inline void setSenha(char * str[8]){
+		Validade(str);
+		strcpy(string, str);
+	}
+	inline char * getSenha(){ return string; }
 };
 
 class cTexto
@@ -88,10 +122,16 @@ class cIdioma
 {
 private:
 	char string[3];
+	void Validade(char str[3]);
 public:
 	cIdioma();
 	~cIdioma();
-	bool Validade();
+	cIdioma(char str[3]){ setIdioma(str); }
+	inline void setIdioma(char str[3]){
+		Validade(str);
+		strcpy(string, str);
+	}
+	inline char * getIdioma(){ return string; }
 };
 
 class cClasseDeTermo

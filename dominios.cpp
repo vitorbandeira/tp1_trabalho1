@@ -44,20 +44,64 @@ void cNome::Validade(char str[20]) throw (invalid_argument){
 
 //FUNÇÕES DA CLASSE ENDEREÇO
 
-
+void cEndereco::Validade(char str[20]){
+	if(str[0] == ' ')
+		throw invalid_argument ("Endereco nao pode comecar com espaco vazio.");
+	if (str[strlen(str)-1] == ' ')
+		throw invalid_argument ("Endereco nao pode terminar com espaco vazio.");
+	for (int i = 0; i < strlen(str)-1; ++i)
+		if(str[i] == ' ' && str[i+1] == ' ')
+			throw invalid_argument ("Dois espacos em branco seguidos.");
+}
 
 //FUNÇÕES DA CLASSE DATA
 
+void cData::Validade(int d, int m, int a){
+	if (a < 1900)
+		throw invalid_argument ("Ano menor do que o permitido.");
+	else if (a > 2099)
+		throw invalid_argument ("Ano maior do que o permitido.");
 
+	if (1 > m || m < 12)
+		throw invalid_argument ("Mes invalido.");
+
+	int limite;
+	if (m == 1 && m == 3 && m == 5 && m == 7 && m == 8 && m == 10 && m == 12)
+		limite = 31;
+	else if (m == 4 && m == 6 && m == 9 && m == 11)
+		limite = 30;
+	if (m == 2)
+		if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))//ano bissexto
+			limite = 29;
+		else
+			limite = 28;
+
+	if (1 > d || d > limite)
+		throw invalid_argument ("Dia invalido.")
+}
 
 //FUNÇÕES DA CLASSE CORREIO ELETRÔNICO
 
-
+void cCorreioEletronico::Validade(char str[20]){
+	int posicao = -1;
+	//Parte local
+	for (int i = 0; i < strlen(str); ++i)
+		if (str[i] == '@')
+			posicao = i;
+	if(posicao == -1)
+		throw invalid_argument ("Sem @ no endeco de email.");
+	if (str[0] == '.')
+		throw invalid_argument ("Email iniciado por '.'.");
+	if (str[posicao-1] == '.')
+		throw invalid_argument ("Email com '.' antes de @.");
+}
 
 //FUNÇÕES DA CLASSE SENHA
 
-bool cSenha::Validade(){
+void cSenha::Validade(char str[8]){
 	bool upper = false, lower = false, number = false;
+	if(strlen(str) < 8)
+		throw invalid_argument ("Tamanho insuficiente.")
 	for (int i = 0; i < 8; ++i){
 		if(Maiuscula(string[i]))
 			upper = true;
@@ -66,9 +110,12 @@ bool cSenha::Validade(){
 		if(Numero(string[i]))
 			number = true;
 	}
-	if(upper && lower && number)
-		return true;
-	return false;
+	if(upper == false)
+		throw invalid_argument ("Sem letra maiuscula.");
+	if(lower == false)
+		throw invalid_argument ("Sem letra minuscula.");
+	if(number == false)
+		throw invalid_argument ("Sem caracter numerico.");
 }
 
 //FUNÇÕES DA CLASSE TEXTO
@@ -77,11 +124,10 @@ bool cSenha::Validade(){
 
 //FUNÇÕES DA CLASSE IDIOMA
 
-bool cIdioma::Validade(){
+void cIdioma::Validade(){
 	for (int i = 0; i < 3; ++i)
 		if(!Maiuscula(string[i]))
-			return false;
-	return true;
+			throw invalid_argument ("Idioma invalido.");
 }
 
 //FUNÇÕES DA CLASSE CLASSE DE TERMO
