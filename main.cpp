@@ -14,12 +14,18 @@ int main()
 	cout << n.getNome() << endl;
 
 	// Teste da classe telefone
+	char numero[14] = {"61 99343-8840"};
+	cTelefone num(numero);
+	cout << num.getTelefone() << endl;
+	strcpy(numero, "12 34567-8910");
+	num.setTelefone(numero);
+	cout << num.getTelefone() << endl;
 
 	//Teste da classe endereco
 	char adress[20] = {"SQSW 301 Bl A A 510"};
     cEndereco ende(adress);
     cout << ende.getEndereco() << endl;
-    strcpy(adress ,"@#!$% sul");
+    strcpy(adress ,"@#!$%% sul");
     ende.setEndereco(adress);
     cout << ende.getEndereco() << endl;
 
