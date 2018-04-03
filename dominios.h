@@ -15,9 +15,7 @@ private:
 public:
 	cNome();
 	~cNome(){};
-	cNome(char str[21]){
-		setNome(str);
-	}
+	cNome(char str[21]){ setNome(str); };
 	inline char * getNome() { return string; }
 	inline void setNome (char str [21]) throw(invalid_argument){
 		Validade(str);
@@ -29,11 +27,18 @@ public:
 class cTelefone
 {
 private:
-	char area[2];
-	char numero[9];
+	//AA NNNNN–NNNN
+	char numero[14];
+	void Validade(char str[14]) throw (invalid_argument);
 public:
 	cTelefone();
-	~cTelefone();
+	~cTelefone(){};
+	cTelefone(char str[14]){ setTelefone(str); };
+	inline char * getTelefone(){ return numero; }
+	inline void setTelefone(char str[14]) throw(invalid_argument){
+		Validade(str);
+		strcpy(numero, str);
+	}
 
 };
 

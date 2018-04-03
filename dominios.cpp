@@ -40,7 +40,19 @@ void cNome::Validade(char str[20]) throw (invalid_argument){
 
 //FUNÇÕES DA CLASSE TELEFONE
 
-
+void cTelefone::Validade(char str[14]) throw (invalid_argument){
+	for (int i = 0; i < 14; ++i){
+		if(i == 2)
+			if(str[i] != ' ')
+				throw invalid_argument ("Numero invalido.");
+		else if(i == 8)
+			if(str[i] != '-')
+				throw invalid_argument ("Numero invalido.");
+		else
+			if(!Numero(str[i]))
+				throw invalid_argument ("Numero invalido.");
+	}
+};
 
 //FUNÇÕES DA CLASSE ENDEREÇO
 
