@@ -1,6 +1,4 @@
-#include <iostream>
 #include "dominios.h"
-using namespace std;
 
 bool Minuscula(char ch){
 	if('a' <= ch && ch <= 'z')
@@ -27,7 +25,7 @@ bool Numero(char ch){
 }
 
 //FUNÇÕES DA CLASSE NOME
-void cNome::Validade(char str[20]) throw (invalid_argument){
+void cNome::Validade(const char str[20]) throw (invalid_argument){
 	if(!Maiuscula(str[0]))
 		throw invalid_argument ("Não comeca com letra maiuscula");
 	for (unsigned int i = 1; i < strlen(string); ++i){
@@ -150,7 +148,8 @@ void cSenha::Validade(char str[9]){
 
 //FUNÇÕES DA CLASSE TEXTO
 
-
+void cTexto::Validade(char str [30]){
+}
 
 //FUNÇÕES DA CLASSE IDIOMA
 
@@ -161,3 +160,8 @@ void cIdioma::Validade(char str[3]){
 }
 
 //FUNÇÕES DA CLASSE CLASSE DE TERMO
+
+void cClasseDeTermo::Validade(char str [30]){
+	if(strcmp(str, "PF") || strcmp(str, "NP"))
+		throw invalid_argument ("Termo invalido");
+}
