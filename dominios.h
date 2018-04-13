@@ -11,13 +11,12 @@ class cNome//e sobrenome
 {
 private:
 	char string[21];
-	void Validade(char str[21]) throw (invalid_argument);
+	void Validade(const char str[21]) throw (invalid_argument);
 public:
-	cNome();
+	cNome(){};
 	~cNome(){};
-	cNome(char str[21]){ setNome(str); };
 	inline char * getNome() { return string; }
-	inline void setNome (char str [21]) throw(invalid_argument){
+	inline void setNome (const char str [21]) throw(invalid_argument){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -31,7 +30,7 @@ private:
 	char numero[14];
 	void Validade(char str[14]) throw (invalid_argument);
 public:
-	cTelefone();
+	cTelefone(){};
 	~cTelefone(){};
 	cTelefone(char str[14]){ setTelefone(str); };
 	inline char * getTelefone(){ return numero; }
@@ -46,12 +45,12 @@ class cEndereco
 {
 private:
 	char string[21];
-	void Validade(char str[21]);
+	void Validade(char str[21]) throw (invalid_argument);
 public:
-	cEndereco();
+	cEndereco(){};
 	~cEndereco(){};
 	cEndereco(char str[21]){ setEndereco(str); }
-	inline void setEndereco(char str[21]){
+	inline void setEndereco(char str[21]) throw (invalid_argument){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -64,12 +63,12 @@ private:
 	int dia;
 	int mes;
 	int ano;
-	void Validade(int d, int m, int a);
+	void Validade(int d, int m, int a) throw (invalid_argument);
 public:
-	cData();
-	~cData();
+	cData(){};
+	~cData(){};
 	cData(int d, int m, int a){ setData(d, m, a); }
-	void inline setData(int d, int m, int a){
+	void inline setData(int d, int m, int a) throw (invalid_argument){
 		Validade(d, m, a);
 		dia = d; mes = m; ano = a;
 	}
@@ -83,12 +82,12 @@ class cCorreioEletronico
 {
 private:
 	char string[21];
-	void Validade(char str[21]);
+	void Validade(char str[21]) throw (invalid_argument);
 public:
-	cCorreioEletronico();
+	cCorreioEletronico(){};
 	~cCorreioEletronico(){};
 	cCorreioEletronico(char str[21]){ setEmail(str); }
-	inline void setEmail(char str[21]){
+	inline void setEmail(char str[21]) throw (invalid_argument){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -101,12 +100,12 @@ class cSenha
 {
 private:
 	char string[9];
-	void Validade(char str[9]);
+	void Validade(char str[9]) throw (invalid_argument);
 public:
-	cSenha();
+	cSenha(){};
 	~cSenha(){};
 	cSenha(char str[9]){ setSenha(str); }
-	inline void setSenha(char str[9]){
+	inline void setSenha(char str[9]) throw (invalid_argument){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -117,22 +116,30 @@ class cTexto
 {
 private:
 	char string[31];
+	void Validade(char str[31]) throw (invalid_argument);
 public:
-	cTexto();
+	cTexto(){};
 	~cTexto(){};
-
+	cTexto(char str[31]){
+		Validade(str);
+		setTexto(str);
+	}
+	inline void setTexto(char str[31]) throw (invalid_argument){
+		strcpy(string, str);
+	} 
+	inline char * getTexto(){ return string; }
 };
 
 class cIdioma
 {
 private:
 	char string[4];
-	void Validade(char str[4]);
+	void Validade(char str[4]) throw (invalid_argument);
 public:
-	cIdioma();
+	cIdioma(){};
 	~cIdioma(){};
 	cIdioma(char str[4]){ setIdioma(str); }
-	inline void setIdioma(char str[4]){
+	inline void setIdioma(char str[4]) throw (invalid_argument){
 		Validade(str);
 		strcpy(string, str);
 	}
@@ -142,11 +149,19 @@ public:
 class cClasseDeTermo
 {
 private:
-
+	char string[2];
+	void Validade(char str[2]) throw (invalid_argument);
 public:
-	cClasseDeTermo();
+	cClasseDeTermo(){};
 	~cClasseDeTermo(){};
-
+	cClasseDeTermo(char str[2]){
+		setTermo(string, str);
+	}
+	inline void setTermo(char str[4]) throw (invalid_argument){
+		Validade(str);
+		strcpy(string, str);
+	}
+	inline char * getTermo(){ return string; }
 };
 
 
