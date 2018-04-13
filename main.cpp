@@ -1,11 +1,22 @@
 #include <iostream>
 #include "dominios.h"
 #include "entidades.h"
+#include "testes.h"
 using namespace std;
 
 int main()
 {
-	//Teste da classe nome
+
+	TUNome teste;
+
+	switch(teste.run()){
+		case TUNome::SUCESSO: cout << "SUCESSO";
+			break;
+		case TUNome::FALHA: cout << "FALHA";
+			break;
+	}
+
+	/*//Teste da classe nome
     char name[20] = {"Pedro"};
 	cNome n(name);
 	cout << n.getNome() << endl;
@@ -60,7 +71,7 @@ int main()
 	cout << idi.getIdioma() << endl;
 
 	//Teste da classe classe de termo
-
+*/
 
     return 0;
 }
