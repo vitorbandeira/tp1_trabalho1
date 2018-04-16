@@ -126,7 +126,7 @@ public:
 	}
 	inline void setTexto(char str[31]) throw (invalid_argument){
 		strcpy(string, str);
-	} 
+	}
 	inline char * getTexto(){ return string; }
 };
 
@@ -155,9 +155,9 @@ public:
 	cClasseDeTermo(){};
 	~cClasseDeTermo(){};
 	cClasseDeTermo(char str[2]){
-		setTermo(string, str);
+		setTermo(str);
 	}
-	inline void setTermo(char str[4]) throw (invalid_argument){
+	inline void setTermo(char str[4]){
 		Validade(str);
 		strcpy(string, str);
 	}

@@ -54,7 +54,7 @@ void cTelefone::Validade(char str[14]) throw (invalid_argument){
 
 //FUNÇÕES DA CLASSE ENDEREÇO
 
-void cEndereco::Validade(char str[20]){
+void cEndereco::Validade(char str[21]){
 	if(str[0] == ' ')
 		throw invalid_argument ("Endereco nao pode comecar com espaco vazio.");
 	if (str[strlen(str)-1] == ' ')

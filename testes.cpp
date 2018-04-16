@@ -12,8 +12,10 @@ void TUNome::TearDown(){
 void TUNome::TestarSucesso(){
 	try{
 		nome->setNome(valid);
-		if(nome->getNome() != valid)
+		if(nome->getNome() != valid){
+			cout << "CHEGUEI AQUI" << endl;
 			estado = FALHA;
+		}
 	}
 	catch(invalid_argument execao){
 		estado = FALHA;
@@ -41,8 +43,8 @@ void TUNome::TestarFalha(){
 
 int TUNome::run(){
 	SetUp();
-    TestarSucesso();
     TestarFalha();
+    TestarSucesso();
     TearDown();
     return estado;
 }
