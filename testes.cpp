@@ -14,7 +14,12 @@ void TUNome::TestarSucesso(){
 		nome->setNome(valid);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if(strcmp(nome->getNome(), valid))
+=======
+		if(nome->getNome() != valid){
+			cout << "CHEGUEI AQUI" << endl;
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
 =======
 		if(nome->getNome() != valid){
 			cout << "CHEGUEI AQUI" << endl;
@@ -54,8 +59,13 @@ int TUNome::run(){
 	SetUp();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	TestarSucesso();
 	TestarFalha();
+=======
+    TestarFalha();
+    TestarSucesso();
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
 =======
     TestarFalha();
     TestarSucesso();
