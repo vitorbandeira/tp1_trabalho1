@@ -12,8 +12,19 @@ void TUNome::TearDown(){
 void TUNome::TestarSucesso(){
 	try{
 		nome->setNome(valid);
+<<<<<<< HEAD
+<<<<<<< HEAD
 		if(strcmp(nome->getNome(), valid))
+=======
+		if(nome->getNome() != valid){
+			cout << "CHEGUEI AQUI" << endl;
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
+=======
+		if(nome->getNome() != valid){
+			cout << "CHEGUEI AQUI" << endl;
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
 			estado = FALHA;
+		}
 	}
 	catch(invalid_argument execao){
 		estado = FALHA;
@@ -41,8 +52,18 @@ void TUNome::TestarFalha(){
 
 int TUNome::run(){
 	SetUp();
+<<<<<<< HEAD
+<<<<<<< HEAD
 	TestarSucesso();
 	TestarFalha();
+=======
+    TestarFalha();
+    TestarSucesso();
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
+=======
+    TestarFalha();
+    TestarSucesso();
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
     TearDown();
     return estado;
 }

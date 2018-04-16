@@ -27,7 +27,7 @@ public:
 	const static int SUCESSO =  0;
     const static int FALHA   = -1;
 
-    int run();
+    int run(){};
 
 };
 

@@ -157,7 +157,7 @@ public:
 	cClasseDeTermo(char str[2]){
 		setTermo(str);
 	}
-	inline void setTermo(char str[4]) throw (invalid_argument){
+	inline void setTermo(char str[4]){
 		Validade(str);
 		strcpy(string, str);
 	}

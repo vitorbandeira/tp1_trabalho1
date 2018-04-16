@@ -1,5 +1,4 @@
 #ifndef ENTIDADES_H_DEFINED
-#define ENTIDADES_H_DEFINED
 
 #include <iostream>
 #include <cstring>
