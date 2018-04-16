@@ -2,19 +2,112 @@
 #include "dominios.h"
 #include "entidades.h"
 #include "testes.h"
+#include "testesEntidades.h"
+
 using namespace std;
 
 int main()
 {
 
-	TUNome teste;
+	TUcNome testeNome;
 
-	switch(teste.run()){
-		case TUNome::SUCESSO: cout << "SUCESSO";
+	switch(testeNome.run()){
+		case TUcNome::SUCESSO: cout << "SUCESSO total no T.U. para classe NOME!\n\n";
 			break;
-		case TUNome::FALHA: cout << "FALHA";
+		case TUcNome::FALHA: cout << "FALHA total ou parcial no T.U. para classe NOME!\n\n";
 			break;
 	}
+
+    TUcSobrenome testeSobrenome;
+
+	switch(testeSobrenome.run()){
+		case TUcSobrenome::SUCESSO: cout << "SUCESSO total no T.U. para classe SOBRENOME!\n\n";
+			break;
+		case TUcSobrenome::FALHA: cout << "FALHA total ou parcial no T.U. para classe SOBRENOME!\n\n";
+			break;
+	}
+
+
+	TUcTelefone testeTelefone;
+
+	switch(testeTelefone.run()){
+		case TUcTelefone::SUCESSO: cout << "SUCESSO total no T.U. para classe TELEFONE!\n\n";
+			break;
+		case TUcTelefone::FALHA: cout << "FALHA total ou parcial no T.U. para classe TELEFONE!\n\n";
+			break;
+	}
+
+	/* TUcEndereco testeEndereco;
+
+	switch(testeEndereco.run()){
+		case TUcEndereco::SUCESSO: cout << "SUCESSO total no T.U. para classe ENDERECO!\n\n";
+			break;
+		case TUcEndereco::FALHA: cout << "FALHA total ou parcial no T.U. para classe ENDERECO!\n\n";
+			break;
+	} */
+
+/*    TUcData testeData;
+
+	switch(testeData.run()){
+		case TUcData::SUCESSO: cout << "SUCESSO total no T.U. para classe DATA!\n\n";
+			break;
+		case TUcData::FALHA: cout << "FALHA total ou parcial no T.U. para classe DATA!\n\n";
+			break;
+	} */
+
+	TUcCorreioEletronico testeCorreioEletronico;
+
+	switch(testeCorreioEletronico.run()){
+		case TUcCorreioEletronico::SUCESSO: cout << "SUCESSO total no T.U. para classe CORREIO ELETRONICO!\n\n";
+			break;
+		case TUcCorreioEletronico::FALHA: cout << "FALHA total ou parcial no T.U. para classe CORREIO ELETRONICO!\n\n";
+			break;
+	}
+
+	TUcSenha testeSenha;
+
+	switch(testeSenha.run()){
+		case TUcSenha::SUCESSO: cout << "SUCESSO total no T.U. para classe SENHA!\n\n";
+			break;
+		case TUcSenha::FALHA: cout << "FALHA total ou parcial no T.U. para classe SENHA!\n\n";
+			break;
+	}
+
+	TUcTextoDef testeTextoDef;
+
+	switch(testeTextoDef.run()){
+		case TUcTextoDef::SUCESSO: cout << "SUCESSO total no T.U. para classe TEXTO DE DEFINICAO!\n\n";
+			break;
+		case TUcTextoDef::FALHA: cout << "FALHA total ou parcial no T.U. para classe TEXTO DE DEFINICAO!\n\n";
+			break;
+	}
+
+	TUcIdioma testeIdioma;
+
+	switch(testeIdioma.run()){
+		case TUcIdioma::SUCESSO: cout << "SUCESSO total no T.U. para classe IDIOMA!\n\n";
+			break;
+		case TUcIdioma::FALHA: cout << "FALHA total ou parcial no T.U. para classe IDIOMA!\n\n";
+			break;
+	}
+
+	TUcClasseDeTermo testeClasseDeTermo;
+
+	switch(testeClasseDeTermo.run()){
+		case TUcClasseDeTermo::SUCESSO: cout << "SUCESSO total no T.U. para classe CLASSE DE TERMO!\n\n";
+			break;
+		case TUcClasseDeTermo::FALHA: cout << "FALHA total ou parcial no T.U. para classe CLASSE DE TERMO!\n\n";
+			break;
+	}
+
+	TUcLeitor testeLeitor;
+
+	switch(testeLeitor.run()){
+		case TUcLeitor::SUCESSO: cout << "SUCESSO total no T.U. para ENTIDADE LEITOR!\n\n";
+			break;
+	}
+
+
 
 	/*//Teste da classe nome
     char name[20] = {"Pedro"};

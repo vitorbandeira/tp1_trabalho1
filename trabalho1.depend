@@ -45,3 +45,38 @@
 	"dominios.h"
 	"entidades.h"
 
+1523855959 source:c:\users\vitor\desktop\tp1\tp1_trabalho1\dominios.cpp
+	"dominios.h"
+
+1523855987 c:\users\vitor\desktop\tp1\tp1_trabalho1\dominios.h
+	<iostream>
+	<cstring>
+	<stdexcept>
+	<string.h>
+
+1523857378 source:c:\users\vitor\desktop\tp1\tp1_trabalho1\entidades.cpp
+	<iostream>
+	"entidades.h"
+
+1523890527 c:\users\vitor\desktop\tp1\tp1_trabalho1\entidades.h
+	<iostream>
+	<cstring>
+	"dominios.h"
+
+1523858841 source:c:\users\vitor\desktop\tp1\tp1_trabalho1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+	"testesEntidades.h"
+
+1523856004 c:\users\vitor\desktop\tp1\tp1_trabalho1\testes.h
+	"dominios.h"
+
+1523856048 source:c:\users\vitor\desktop\tp1\tp1_trabalho1\testes.cpp
+	"testes.h"
+	<string.h>
+
+1523890435 c:\users\vitor\desktop\tp1\tp1_trabalho1\testesentidades.h
+	"entidades.h"
+
