@@ -39,8 +39,11 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="testes.cpp" />
 		<Unit filename="testes.h" />
+<<<<<<< HEAD
 		<Unit filename="testesEntidades.cpp" />
 		<Unit filename="testesEntidades.h" />
+=======
+>>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
 		<Extensions>
 			<code_completion />
 			<debugger />

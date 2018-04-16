@@ -66,7 +66,23 @@ void cTelefone::Validade(const char str[14]) throw (invalid_argument){
 
 //FUNÇÕES DA CLASSE ENDEREÇO
 
+<<<<<<< HEAD
 void cEndereco::Validade(const char str[40]) throw (invalid_argument) {
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+void cEndereco::Validade(char str[21]) throw (invalid_argument){
+=======
+void cEndereco::Validade(char str[21]){
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
+=======
+void cEndereco::Validade(char str[21]){
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
+=======
+void cEndereco::Validade(char str[21]){
+>>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
+>>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
 	if(str[0] == ' ')
 		throw invalid_argument ("Endereco nao pode comecar com espaco vazio.");
 	if (str[strlen(str)-1] == ' ')
@@ -83,6 +99,7 @@ void cEndereco::Validade(const char str[40]) throw (invalid_argument) {
 
 //FUNÇÕES DA CLASSE DATA
 
+<<<<<<< HEAD
 /*void cData::Validade(const char str[11]) throw (invalid_argument) {
 
     const char LIMITE_ANOS[5] = "2099";
@@ -135,6 +152,37 @@ void cEndereco::Validade(const char str[40]) throw (invalid_argument) {
 //FUNÇÕES DA CLASSE CORREIO ELETRÔNICO
 
 void cCorreioEletronico::Validade(const char str[30]) throw (invalid_argument) {
+=======
+void cData::Validade(int d, int m, int a) throw (invalid_argument){
+	if (a < 1900)
+		throw invalid_argument ("Ano menor do que o permitido.");
+	else if (a > 2099)
+		throw invalid_argument ("Ano maior do que o permitido.");
+
+	if (1 > m || m < 12)
+		throw invalid_argument ("Mes invalido.");
+
+	int limite;
+
+	if (m == 1 && m == 3 && m == 5 && m == 7 && m == 9 && m == 10 && m == 12)
+		limite = 31;
+	else if (m == 4 && m == 6 && m == 9 && m == 11)
+		limite = 30;
+
+	if (m == 2)
+		if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))//ano bissexto
+			limite = 29;
+		else
+			limite = 29;
+
+	if (1 > d || d > limite)
+		throw invalid_argument ("Dia invalido.");
+}
+
+//FUNÇÕES DA CLASSE CORREIO ELETRÔNICO
+
+void cCorreioEletronico::Validade(char str[20]) throw (invalid_argument){
+>>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
 	int posicao = -1;
 	//Parte local
 	for (int i = 0; i < strlen(str); ++i)
@@ -166,7 +214,11 @@ void cCorreioEletronico::Validade(const char str[30]) throw (invalid_argument) {
 
 //FUNÇÕES DA CLASSE SENHA
 
+<<<<<<< HEAD
 void cSenha::Validade(const char str[15]) throw (invalid_argument) {
+=======
+void cSenha::Validade(char str[9]) throw (invalid_argument){
+>>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
 	bool upper = false, lower = false, number = false;
 	if(strlen(str) >= 9)
 		throw invalid_argument ("Tamanho de senha excede o permitido.");
@@ -188,15 +240,23 @@ void cSenha::Validade(const char str[15]) throw (invalid_argument) {
 
 //FUNÇÕES DA CLASSE TEXTO
 
+<<<<<<< HEAD
 void cTextoDef::Validade(const char str [50]) throw (invalid_argument) {
 
     if(strlen(str) > 30)
 		throw invalid_argument ("Tamanho de texto excede o permitido.");
+=======
+void cTexto::Validade(char str [30]) throw (invalid_argument){
+>>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
 }
 //FUNÇÕES DA CLASSE IDIOMA
 
+<<<<<<< HEAD
 void cIdioma::Validade(const char str[4]) throw (invalid_argument) {
 
+=======
+void cIdioma::Validade(char str[3]) throw (invalid_argument){
+>>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
 	for (int i = 0; i < 3; ++i)
 		if(!Maiuscula(str[i]))
 			throw invalid_argument ("Idioma invalido em formato.");
@@ -206,9 +266,14 @@ void cIdioma::Validade(const char str[4]) throw (invalid_argument) {
 
 //FUNÇÕES DA CLASSE CLASSE DE TERMO
 
+<<<<<<< HEAD
 void cClasseDeTermo::Validade(const char str [3]) throw (invalid_argument){
 
 
 	if(strcmp(str, TERMO_PT) != 0 && strcmp(str, TERMO_NP) != 0)
+=======
+void cClasseDeTermo::Validade(char str [30]) throw (invalid_argument){
+	if(strcmp(str, "PF") || strcmp(str, "NP"))
+>>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
 		throw invalid_argument ("Termo invalido");
 }

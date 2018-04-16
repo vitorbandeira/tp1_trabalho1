@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # depslib dependency file v1.0
 1522776545 source:/home/pedro/Documentos/TP1/trabalho_1/trabalho1/main.cpp
 	<iostream>
@@ -80,3 +81,58 @@
 1523890435 c:\users\vitor\desktop\tp1\tp1_trabalho1\testesentidades.h
 	"entidades.h"
 
+=======
+# depslib dependency file v1.0
+1522776545 source:/home/pedro/Documentos/TP1/trabalho_1/trabalho1/main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+
+1522776909 /home/pedro/Documentos/TP1/trabalho_1/trabalho1/dominios.h
+	<iostream>
+	<cstring>
+	<stdexcept>
+
+1522776902 source:/home/pedro/Documentos/TP1/trabalho_1/trabalho1/dominios.cpp
+	<iostream>
+	"dominios.h"
+
+1522207124 source:/home/pedro/Documentos/TP1/trabalho_1/trabalho1/entidades.cpp
+	<iostream>
+	"entidades.h"
+
+1525365716 /home/pedro/Documentos/TP1/trabalho_1/trabalho1/entidades.h
+	<iostream>
+	<cstring>
+	"dominios.h"
+
+1523821208 source:c:\users\pedro\documents\github\tp1_trabalho1\dominios.cpp
+	"dominios.h"
+
+1523821013 c:\users\pedro\documents\github\tp1_trabalho1\dominios.h
+	<iostream>
+	<cstring>
+	<stdexcept>
+
+1523820940 source:c:\users\pedro\documents\github\tp1_trabalho1\entidades.cpp
+	<iostream>
+	"entidades.h"
+
+1523820940 c:\users\pedro\documents\github\tp1_trabalho1\entidades.h
+	<iostream>
+	<cstring>
+	"dominios.h"
+
+1523821387 source:c:\users\pedro\documents\github\tp1_trabalho1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1523820940 c:\users\pedro\documents\github\tp1_trabalho1\testes.h
+	"dominios.h"
+
+1523820940 source:c:\users\pedro\documents\github\tp1_trabalho1\testes.cpp
+	"testes.h"
+
+>>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
