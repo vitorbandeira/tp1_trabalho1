@@ -54,7 +54,7 @@ void cTelefone::Validade(char str[14]) throw (invalid_argument){
 
 //FUNÇÕES DA CLASSE ENDEREÇO
 
-void cEndereco::Validade(char str[20]){
+void cEndereco::Validade(char str[21]) throw (invalid_argument){
 	if(str[0] == ' ')
 		throw invalid_argument ("Endereco nao pode comecar com espaco vazio.");
 	if (str[strlen(str)-1] == ' ')
@@ -66,7 +66,7 @@ void cEndereco::Validade(char str[20]){
 
 //FUNÇÕES DA CLASSE DATA
 
-void cData::Validade(int d, int m, int a){
+void cData::Validade(int d, int m, int a) throw (invalid_argument){
 	if (a < 1900)
 		throw invalid_argument ("Ano menor do que o permitido.");
 	else if (a > 2099)
@@ -94,7 +94,7 @@ void cData::Validade(int d, int m, int a){
 
 //FUNÇÕES DA CLASSE CORREIO ELETRÔNICO
 
-void cCorreioEletronico::Validade(char str[20]){
+void cCorreioEletronico::Validade(char str[20]) throw (invalid_argument){
 	int posicao = -1;
 	//Parte local
 	for (int i = 0; i < strlen(str); ++i)
@@ -126,7 +126,7 @@ void cCorreioEletronico::Validade(char str[20]){
 
 //FUNÇÕES DA CLASSE SENHA
 
-void cSenha::Validade(char str[9]){
+void cSenha::Validade(char str[9]) throw (invalid_argument){
 	bool upper = false, lower = false, number = false;
 	if(strlen(str) >= 9)
 		throw invalid_argument ("Tamanho insuficiente.");
@@ -148,12 +148,12 @@ void cSenha::Validade(char str[9]){
 
 //FUNÇÕES DA CLASSE TEXTO
 
-void cTexto::Validade(char str [30]){
+void cTexto::Validade(char str [30]) throw (invalid_argument){
 }
 
 //FUNÇÕES DA CLASSE IDIOMA
 
-void cIdioma::Validade(char str[3]){
+void cIdioma::Validade(char str[3]) throw (invalid_argument){
 	for (int i = 0; i < 3; ++i)
 		if(!Maiuscula(str[i]))
 			throw invalid_argument ("Idioma invalido.");
@@ -161,7 +161,7 @@ void cIdioma::Validade(char str[3]){
 
 //FUNÇÕES DA CLASSE CLASSE DE TERMO
 
-void cClasseDeTermo::Validade(char str [30]){
+void cClasseDeTermo::Validade(char str [30]) throw (invalid_argument){
 	if(strcmp(str, "PF") || strcmp(str, "NP"))
 		throw invalid_argument ("Termo invalido");
 }

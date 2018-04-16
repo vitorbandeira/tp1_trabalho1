@@ -22,26 +22,32 @@
 	<cstring>
 	"dominios.h"
 
-1522696331 source:c:\users\pedro\documents\github\tp1_trabalho1\dominios.cpp
-	<iostream>
+1523821208 source:c:\users\pedro\documents\github\tp1_trabalho1\dominios.cpp
 	"dominios.h"
 
-1522693236 c:\users\pedro\documents\github\tp1_trabalho1\dominios.h
+1523821013 c:\users\pedro\documents\github\tp1_trabalho1\dominios.h
 	<iostream>
 	<cstring>
 	<stdexcept>
 
-1522465645 source:c:\users\pedro\documents\github\tp1_trabalho1\entidades.cpp
+1523820940 source:c:\users\pedro\documents\github\tp1_trabalho1\entidades.cpp
 	<iostream>
 	"entidades.h"
 
-1522465645 c:\users\pedro\documents\github\tp1_trabalho1\entidades.h
+1523820940 c:\users\pedro\documents\github\tp1_trabalho1\entidades.h
 	<iostream>
 	<cstring>
 	"dominios.h"
 
-1522696365 source:c:\users\pedro\documents\github\tp1_trabalho1\main.cpp
+1523821387 source:c:\users\pedro\documents\github\tp1_trabalho1\main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"
+	"testes.h"
+
+1523820940 c:\users\pedro\documents\github\tp1_trabalho1\testes.h
+	"dominios.h"
+
+1523820940 source:c:\users\pedro\documents\github\tp1_trabalho1\testes.cpp
+	"testes.h"
 
