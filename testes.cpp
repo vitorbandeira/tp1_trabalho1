@@ -160,7 +160,7 @@ int TUcTelefone::run(){
 }
 
 
-/*
+
 void TUcEndereco::SetUp(){
     endereco = new cEndereco();
 	estado = SUCESSO;
@@ -174,13 +174,9 @@ void TUcEndereco::TestarSucesso()
 {
     try
     {
-        cout << valid << endl;          //debug
-        cout << endereco->getEndereco() << endl;        //debug
         endereco->setEndereco(valid);
-
         if (strcmp (endereco->getEndereco(), valid) != 0)
         {
-
             estado = FALHA;
         }
         else
@@ -188,6 +184,7 @@ void TUcEndereco::TestarSucesso()
     }
     catch(invalid_argument excecao)
     {
+        cout << endereco->getEndereco() << endl;
         estado = FALHA;
     }
 
@@ -220,10 +217,10 @@ int TUcEndereco::run(){
     TearDown();
     return estado;
 }
-*/
 
 
-/*void TUcData::SetUp(){
+
+void TUcData::SetUp(){
     data = new cData();
 	estado = SUCESSO;
 }
@@ -273,7 +270,6 @@ int TUcData::run(){
     TearDown();
     return estado;
 }
-*/
 
 void TUcCorreioEletronico::SetUp(){
     correioeletronico = new cCorreioEletronico();
@@ -305,7 +301,7 @@ void TUcCorreioEletronico::TestarSucesso()
 
 void TUcCorreioEletronico::TestarFalha(){
 	try{
-<<<<<<< HEAD
+
 		correioeletronico->setCorreioEletronico(invalid1);
 			estado = FALHA;
 		correioeletronico->setCorreioEletronico(invalid2);
@@ -315,28 +311,9 @@ void TUcCorreioEletronico::TestarFalha(){
         correioeletronico->setCorreioEletronico(invalid4);
 			estado = FALHA;
         correioeletronico->setCorreioEletronico(invalid5);
-=======
-		nome->setNome(valid);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		if(strcmp(nome->getNome(), valid))
-=======
-		if(nome->getNome() != valid){
-			cout << "CHEGUEI AQUI" << endl;
->>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
-=======
-		if(nome->getNome() != valid){
-			cout << "CHEGUEI AQUI" << endl;
->>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
-=======
-		if(nome->getNome() != valid){
-			cout << "CHEGUEI AQUI" << endl;
->>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
->>>>>>> 17c22c214878a518a2a88412b851cd4be712be89
 			estado = FALHA;
 		}
-	}
+
 	catch(invalid_argument excecao){
 		cout << "Teste de FALHA para CORREIO ELETRONICO executado com exito!" << endl;
 		return;
@@ -502,23 +479,8 @@ void TUcIdioma::TestarFalha(){
 
 int TUcIdioma::run(){
 	SetUp();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 	TestarSucesso();
 	TestarFalha();
-=======
-    TestarFalha();
-    TestarSucesso();
->>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
-=======
-    TestarFalha();
-    TestarSucesso();
->>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
-=======
-    TestarFalha();
-    TestarSucesso();
->>>>>>> 47cb2b1fb0be02c60ff42673867b8c03c66564f0
     TearDown();
     return estado;
 }
